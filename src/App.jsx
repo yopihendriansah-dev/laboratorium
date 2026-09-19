@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar'
 import RegistrationModal from './components/RegistrationModal'
 import KatalogPage from './pages/katalog/KatalogPage'
 import OperasionalPage from './pages/operasional/OperasionalPage'
+import KatalogPemasaranPage from './pages/katalog-pemasaran/KatalogPemasaranPage'
 
 function Placeholder({ title }) {
   return (
@@ -33,6 +34,7 @@ export default function App() {
                 <Route path="/" element={<Navigate to="/katalog-layanan-tarif" replace />} />
                 <Route path="/katalog-layanan-tarif" element={<KatalogPage />} />
                 <Route path="/operasional" element={<OperasionalPage />} />
+                <Route path="/katalog-pemasaran" element={<KatalogPemasaranPage />} />
                 <Route path="/portal-klien" element={<Placeholder title="Portal Klien & Hasil" />} />
                 <Route path="/admin-qc" element={<Placeholder title="Admin, QC & Audit" />} />
               </Routes>

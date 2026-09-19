@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 const links = [
   { to: '/katalog-layanan-tarif', label: 'Katalog & Pemesanan', icon: 'grid_view' },
+  { to: '/katalog-pemasaran', label: 'Katalog Pemasaran (DB)', icon: 'storefront' },
   { to: '/operasional', label: 'Operasional Lab', icon: 'biotech' },
   { to: '/portal-klien', label: 'Portal Klien & Hasil', icon: 'folder_shared' },
   { to: '/admin-qc', label: 'Admin, QC & Audit', icon: 'security' },
