@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-container": "#bdb2ff",
+          "secondary": "#5f559a",
+          "error-container": "#ffdad6",
+          "background": "#f9f9ff",
+          "surface": "#f9f9ff",
+          "on-primary-fixed": "#001a41",
+          "on-surface-variant": "#414754",
+          "primary-fixed": "#d8e2ff",
+          "on-tertiary": "#ffffff",
+          "surface-variant": "#d8e3fb",
+          "outline-variant": "#c2c6d6",
+          "on-secondary-fixed": "#1b0c53",
+          "surface-bright": "#f9f9ff",
+          "on-tertiary-fixed-variant": "#5b3f47",
+          "secondary-fixed": "#e5deff",
+          "on-primary": "#ffffff",
+          "on-secondary-fixed-variant": "#473d81",
+          "inverse-on-surface": "#ecf1ff",
+          "on-surface": "#111c2d",
+          "surface-container-high": "#dee8ff",
+          "tertiary-fixed": "#ffd9e2",
+          "on-tertiary-fixed": "#2b151c",
+          "on-tertiary-container": "#fffbff",
+          "tertiary": "#72545c",
+          "error": "#ba1a1a",
+          "secondary-fixed-dim": "#c8bfff",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary": "#ffffff",
+          "outline": "#727785",
+          "primary-fixed-dim": "#adc6ff",
+          "on-error": "#ffffff",
+          "on-primary-fixed-variant": "#004494",
+          "on-primary-container": "#fefcff",
+          "tertiary-container": "#8d6c75",
+          "on-error-container": "#93000a",
+          "surface-dim": "#cfdaf2",
+          "on-secondary-container": "#4b4185",
+          "inverse-surface": "#263143",
+          "primary": "#0058bd",
+          "surface-container-highest": "#d8e3fb",
+          "surface-container": "#e7eeff",
+          "surface-tint": "#005ac2",
+          "inverse-primary": "#adc6ff",
+          "surface-container-low": "#f0f3ff",
+          "primary-container": "#1470e8",
+          "tertiary-fixed-dim": "#e4bcc6",
+          "on-background": "#111c2d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "0.75rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.25rem",
+          "gutter-desktop": "1.5rem",
+          "gutter": "1rem",
+          "margin-desktop": "2rem",
+          "space-xl": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "body-md": ["Plus Jakarta Sans"],
+          "numeric-data": ["Inter"],
+          "label-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "numeric-data": ["13px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+          "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><div class="fixed top-0 left-0 right-0 z-50"><div class="w-full h-7 bg-surface-container-high px-gutter-desktop flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[14px]">verified</span><span>Status Lab: <strong class="text-on-surface font-semibold">Terakreditasi KAN ISO/IEC 17025:2017</strong></span><span class="text-outline-variant">•</span><span class="inline-flex items-center gap-1 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Sistem Operasional Normal</span></div><div class="hidden md:flex items-center gap-space-md text-on-surface-variant"><span class="font-numeric-data text-numeric-data">Server Node: ID-JKT-LAB01</span><span class="text-outline-variant">|</span><span class="font-numeric-data text-numeric-data">QC Status: Optimal (99.8%)</span></div></div><header class="w-full h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><img alt="PrecisionLab Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf621CcusSPBjGZ92zUl0TRFgTtEBIT_pJL29ad0WmSr1NksME2ZKTDcBXvqazH3XiH8jF1Xql4lI5kalsDeU6Bu3XWnYfGj-2PQU-xDlHST9C_JMIqGxMILgRZrdFaYWNDMs94zHvJq4anO1nX0rcveh91LBF8LUtBtSAIYlQ3f86O9Hh7_K_6hf0HgzyFmrnSxt9GjinmChv-KQFnxpHSSUjsw98lbMiDAx2MPp4DTP_amsDsetP"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">PrecisionLab</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">LIMS Terintegrasi</span></div></div><div class="flex-1 max-w-md mx-space-lg hidden lg:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-sm" placeholder="Cari kode sampel, batch ID, atau parameter pengujian..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-md py-2 rounded-lg shadow-[0_2px_4px_rgba(0,88,189,0.15)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Pendaftaran Sampel</span></button><div class="relative flex items-center justify-center"><button aria-label="Notifikasi" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-error px-1 font-label-sm text-[9px] font-bold text-on-error">3</span></button></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden sm:block"><p class="font-label-lg text-label-lg text-on-surface leading-tight">apt. Aisyah Putri, M.Si</p><p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Lead Analyst / QC Specialist</p></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnZzeKBj6mEsyj7FqTFjrPPui6bMWSL2Bx90lsfXMo81WqFj7rRVZlz4xbIzGmI9tNqmpH6JThtMGrU07qvOjT9NXZFR-ewqP6O2QIXiS7wn3IA-36whdCXQrDcaOamC-poAejbXhQI0P0F7G6LFGOecxjyWXgA0X4DcP4XZQ5CGN3KSQc6JhzRP3uVXsXz81SOmjBLwIr71ERCTpNNOUSOCjp_isEnS-8JXvIYdpfKBeLM9-it_SP"/></div></div></header></div><aside class="fixed left-0 top-[92px] h-[calc(100vh-92px)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md px-space-sm"><div class="px-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Navigasi Terintegrasi</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="katalog-dan-pemesanan" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Katalog &amp; Pemesanan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="operasional-lab" href="#"><span class="material-symbols-outlined text-[20px]">biotech</span><span>Operasional Lab</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="portal-klien-dan-hasil" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Portal Klien &amp; Hasil</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="admin-qc-dan-audit" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span>Admin, QC &amp; Audit</span></a></nav></div><div class="px-space-md pt-space-md border-t border-outline-variant/20"><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Reagen Stock Alert</span><span class="text-error font-semibold">2 Low</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full w-4/5 rounded-full"></div></div><p class="font-label-sm text-[10px] text-outline mt-1">Batch QC L-889 verifikasi siap</p></div></div></aside><div class="pl-64"><main class="relative pt-[92px] min-h-screen bg-surface w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-lg">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute right-64 -bottom-20 w-64 h-64 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm tracking-wide uppercase">Audit Ready • ISO/IEC 17025:2017</span>
+<span class="inline-flex items-center gap-1 font-numeric-data text-numeric-data text-outline">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Telemetri Real-time
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Pusat Kendali Mutu &amp; Kepatuhan Eksekutif</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Supervisi metrik operasional terpadu, validasi statistika Shewhart kontrol mutu analitik, log rantai pengawasan integritas tinggi (21 CFR Part 11 compliant), serta pemantauan siklus persediaan B3.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<div class="hidden sm:flex flex-col items-end mr-2">
+<span class="font-label-sm text-label-sm text-outline">Siklus Kalibrasi Terakhir</span>
+<span class="font-numeric-data text-numeric-data font-semibold text-on-surface">Hari ini, 06:00:00 WIB</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-2.5 rounded-lg font-label-lg text-label-lg transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Unduh Berita Acara</span>
+</button>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary px-space-md py-2.5 rounded-lg font-label-lg text-label-lg shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Kunci Validasi QC</span>
+</button>
+</div>
+</div>
+<!-- Executive KPI Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mt-space-lg">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Indeks Kepatuhan Mutu</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mt-1">99.2%</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-lowest text-primary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">show_chart</span>
+</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Shewhart In-Control
+          </span>
+<span class="font-numeric-data text-numeric-data text-outline">15 batch normal</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-2">
+<div class="bg-primary h-full rounded-full" style="width: 99.2%"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Rata-rata Turnaround Time</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mt-1">2.6 <span class="font-headline-sm text-headline-sm font-normal text-on-surface-variant">Hari</span></span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-lowest text-secondary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Out of SLA Target: <strong class="font-numeric-data text-on-surface">0.8%</strong></span>
+<span class="inline-flex items-center text-primary font-numeric-data text-numeric-data font-semibold">
+            ↓ 0.4 Hari
+          </span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Pendapatan Pengujian (Bulan Ini)</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-1">Rp 384,5 Jt</span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-lowest text-primary-container shadow-xs">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14% YoY
+          </span>
+<span class="font-numeric-data text-numeric-data text-outline">Target: 400 Jt</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="bg-tertiary-fixed/30 p-space-md rounded-xl flex flex-col justify-between relative overflow-hidden group hover:bg-tertiary-fixed/45 transition-all">
+<div class="flex items-start justify-between mb-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-fixed-variant">Reagen Kritis Menipis</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-tertiary-fixed tracking-tight mt-1">3 <span class="font-headline-sm text-headline-sm font-normal">Item</span></span>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-lowest text-error shadow-xs">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant font-medium">Auto-reorder status:</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[10px] uppercase font-bold tracking-wider">Aktif</span>
+</div>
+<div class="w-full bg-error-container h-1 rounded-full overflow-hidden mt-2">
+<div class="bg-error h-full rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Module Tab Navigation -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-1.5 mb-space-lg flex items-center justify-start gap-1 overflow-x-auto">
+<button class="module-tab-btn active-tab inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg font-label-lg text-label-lg bg-primary text-on-primary shadow-xs transition-all whitespace-nowrap" id="tab-btn-qc" onclick="switchTab('qc-view')" type="button">
+<span class="material-symbols-outlined text-[18px]">monitoring</span>
+<span>Kontrol Mutu &amp; Kurva Kalibrasi</span>
+</button>
+<button class="module-tab-btn inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" id="tab-btn-reagent" onclick="switchTab('reagent-view')" type="button">
+<span class="material-symbols-outlined text-[18px]">science</span>
+<span>Inventaris Reagen &amp; MSDS</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error/15 text-error font-label-sm text-[10px] font-bold">3</span>
+</button>
+<button class="module-tab-btn inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" id="tab-btn-audit" onclick="switchTab('audit-view')" type="button">
+<span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+<span>Audit Trail &amp; Logbook Sistem</span>
+</button>
+<button class="module-tab-btn inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all whitespace-nowrap" id="tab-btn-rbac" onclick="switchTab('rbac-view')" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Manajemen Role &amp; Hak Akses (RBAC)</span>
+</button>
+</div>
+<!-- TAB 1: KONTROL MUTU & LEVEY-JENNINGS / SHEWHART CHART -->
+<div class="tab-pane flex flex-col gap-space-lg" id="tab-qc">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-space-lg">
+<!-- Shewhart Chart Container (2 cols on xl) -->
+<div class="xl:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Shewhart / Levey-Jennings Chart (15 Run Terakhir)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Parameter: Spektrofotometri Logam Berat (Pb) • Standar Kalibrasi Konsentrasi 0.050 mg/L
+            </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Status: ISO 17025 In-Control
+            </span>
+</div>
+</div>
+<!-- Inline SVG Chart: Shewhart Quality Control Chart -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md relative my-2 overflow-x-auto">
+<div class="min-w-[620px]">
+<div class="flex items-center justify-between font-label-sm text-[10px] text-outline px-10 pb-1">
+<span>Upper Control Limit (+3σ): 0.056 mg/L</span>
+<span>Mean Target (μ): 0.050 mg/L</span>
+<span>Lower Control Limit (-3σ): 0.044 mg/L</span>
+</div>
+<svg aria-label="Grafik Shewhart Levey Jennings" class="w-full h-56 overflow-visible" viewbox="0 0 700 240">
+<!-- Defs for subtle gradients -->
+<defs>
+<lineargradient id="qcAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0058bd" stop-opacity="0.12"></stop>
+<stop offset="100%" stop-color="#0058bd" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Safe Zone Fill (+/- 2SD to -2SD) -->
+<rect fill="#0058bd" fill-opacity="0.03" height="100" rx="4" width="620" x="50" y="60"></rect>
+<!-- Threshold Lines -->
+<!-- +3 SD UCL (Error Threshold) -->
+<line stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="1.5" x1="50" x2="670" y1="35" y2="35"></line>
+<text fill="#ba1a1a" font-family="Inter" font-size="10" font-weight="600" text-anchor="end" x="45" y="38">+3σ (UCL)</text>
+<!-- +2 SD (Warning) -->
+<line stroke="#727785" stroke-dasharray="3,3" stroke-opacity="0.6" stroke-width="1" x1="50" x2="670" y1="65" y2="65"></line>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="end" x="45" y="68">+2σ</text>
+<!-- +1 SD -->
+<line stroke="#c2c6d6" stroke-dasharray="2,2" stroke-width="0.75" x1="50" x2="670" y1="95" y2="95"></line>
+<!-- MEAN TARGET -->
+<line stroke="#0058bd" stroke-width="2" x1="50" x2="670" y1="120" y2="120"></line>
+<text fill="#0058bd" font-family="Inter" font-size="10" font-weight="700" text-anchor="end" x="45" y="124">Mean (μ)</text>
+<!-- -1 SD -->
+<line stroke="#c2c6d6" stroke-dasharray="2,2" stroke-width="0.75" x1="50" x2="670" y1="145" y2="145"></line>
+<!-- -2 SD (Warning) -->
+<line stroke="#727785" stroke-dasharray="3,3" stroke-opacity="0.6" stroke-width="1" x1="50" x2="670" y1="175" y2="175"></line>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="end" x="45" y="178">-2σ</text>
+<!-- -3 SD LCL (Error Threshold) -->
+<line stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="1.5" x1="50" x2="670" y1="205" y2="205"></line>
+<text fill="#ba1a1a" font-family="Inter" font-size="10" font-weight="600" text-anchor="end" x="45" y="208">-3σ (LCL)</text>
+<!-- Shaded Run Area -->
+<polygon fill="url(#qcAreaGrad)" points="
+                60,118 100,112 140,126 180,105 220,115 260,130 300,122 340,98 380,110 420,128 460,116 500,108 540,124 580,118 620,114
+                620,120 60,120"></polygon>
+<!-- Shewhart Run Line connecting 15 points -->
+<polyline fill="none" points="
+                60,118 100,112 140,126 180,105 220,115 260,130 300,122 340,98 380,110 420,128 460,116 500,108 540,124 580,118 620,114" stroke="#0058bd" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- 15 Batch Sample Points (Circles) with hover indicators -->
+<!-- Batch #1 -->
+<circle cx="60" cy="118" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="60" y="226">B01</text>
+<!-- Batch #2 -->
+<circle cx="100" cy="112" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="100" y="226">B02</text>
+<!-- Batch #3 -->
+<circle cx="140" cy="126" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="140" y="226">B03</text>
+<!-- Batch #4 -->
+<circle cx="180" cy="105" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="180" y="226">B04</text>
+<!-- Batch #5 -->
+<circle cx="220" cy="115" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="220" y="226">B05</text>
+<!-- Batch #6 -->
+<circle cx="260" cy="130" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="260" y="226">B06</text>
+<!-- Batch #7 -->
+<circle cx="300" cy="122" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="300" y="226">B07</text>
+<!-- Batch #8 (Slight surge, within 2SD) -->
+<circle cx="340" cy="98" fill="#5f559a" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="340" y="226">B08</text>
+<!-- Batch #9 -->
+<circle cx="380" cy="110" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="380" y="226">B09</text>
+<!-- Batch #10 -->
+<circle cx="420" cy="128" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="420" y="226">B10</text>
+<!-- Batch #11 -->
+<circle cx="460" cy="116" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="460" y="226">B11</text>
+<!-- Batch #12 -->
+<circle cx="500" cy="108" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="500" y="226">B12</text>
+<!-- Batch #13 -->
+<circle cx="540" cy="124" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="540" y="226">B13</text>
+<!-- Batch #14 -->
+<circle cx="580" cy="118" fill="#ffffff" r="4.5" stroke="#0058bd" stroke-width="2.5"></circle>
+<text fill="#727785" font-family="Inter" font-size="9" text-anchor="middle" x="580" y="226">B14</text>
+<!-- Batch #15 (Active latest) -->
+<circle cx="620" cy="114" fill="#0058bd" r="6" stroke="#d8e2ff" stroke-width="2"></circle>
+<text fill="#0058bd" font-family="Inter" font-size="9" font-weight="700" text-anchor="middle" x="620" y="226">B15 (Now)</text>
+</svg>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Target Konsentrasi</span>
+<p class="font-numeric-data text-numeric-data font-bold text-on-surface">0.050 mg/L</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Standar Deviasi (SD)</span>
+<p class="font-numeric-data text-numeric-data font-bold text-on-surface">±0.0019</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Evaluasi Aturan Westgard</span>
+<p class="font-numeric-data text-numeric-data font-bold text-primary">All Rules Pass (1-3s, 2-2s, R-4s)</p>
+</div>
+</div>
+</div>
+<!-- Statistical Accuracy & Precision Panel -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1: Spike Recovery -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Uji Akurasi Matrix Spike</span>
+<span class="material-symbols-outlined text-primary text-[20px]">science</span>
+</div>
+<div class="flex items-baseline gap-2 my-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">98.6%</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">• Recovery Optimal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+            Batas keberterimaan metode KAN: <strong class="text-on-surface">85.0% - 115.0%</strong>. Sampel spike terbukti tanpa interferensi matriks organik.
+          </p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98.6%"></div>
+</div>
+</div>
+<!-- Card 2: Duplo RSD Precision -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Presisi Duplo (RSD Horwitz)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">precision_manufacturing</span>
+</div>
+<div class="flex items-baseline gap-2 my-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">1.2%</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">• Memenuhi Syarat (&lt; 5.0%)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+            Varians duplikasi sampel konsisten. Koefisien variasi berada jauh di bawah ambang batas toleransi ketidakpastian.
+          </p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 24%"></div>
+</div>
+</div>
+<!-- Card 3: Analyst Compliance Summary -->
+<div class="bg-primary/5 rounded-xl p-space-md flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-primary">Sertifikasi Personel Analisis</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">12 analis memiliki rekam uji profisiensi aktif tahun 2025.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: INVENTARIS REAGEN & BAHAN BERBAHAYA (B3/MSDS) -->
+<div class="tab-pane hidden flex flex-col gap-space-lg" id="tab-reagent">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Monitoring Inventaris Reagen, Standar &amp; Dokumen MSDS</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pelacakan nomor lot analitis, tanggal kedaluwarsa, kuantitas riil gudang basah, dan kepatuhan lembar data keselamatan kerja (B3).
+          </p>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="inline-flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>Unduh Log Bahan B3</span>
+</button>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary px-space-md py-2 rounded-lg font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_mode</span>
+<span>Pesan Ulang Otomatis (Auto-Reorder)</span>
+</button>
+</div>
+</div>
+<!-- Critical Stock Notice Banner -->
+<div class="bg-tertiary-fixed/35 p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-[24px]">notification_important</span>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-tertiary-fixed">Perhatian Ambang Batas Stok Reagen Standar Kalibrasi</span>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant">Standar Timbal (Pb) 1000 ppm mendekati kedaluwarsa (&lt;14 hari) dan volume sisa 50 mL berada di bawah buffer minimum operasional.</p>
+</div>
+</div>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-md bg-error text-on-error font-label-sm text-label-sm font-semibold hover:bg-on-error-container transition-colors shadow-xs" type="button">
+          Proses E-Procurement
+        </button>
+</div>
+<!-- Reagents Table -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Nama Bahan Kimia / Standar</th>
+<th class="py-3 px-space-md">Spesifikasi &amp; Lot ID</th>
+<th class="py-3 px-space-md">Sisa Stok</th>
+<th class="py-3 px-space-md">Tanggal Kedaluwarsa</th>
+<th class="py-3 px-space-md">Katalog MSDS</th>
+<th class="py-3 px-space-md">Status Stok</th>
+<th class="py-3 px-space-md text-right">Tindakan</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<!-- Row 1: HNO3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<div>
+<span>Asam Nitrat (HNO3) 65%</span>
+<span class="block font-label-sm text-[11px] text-outline">Pro-Analisis • Merk: Merck KGaA</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">LOT-2024-8871-A</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data font-semibold text-on-surface">2.5 L <span class="text-outline font-normal">(Buffer: 1.0 L)</span></td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">Nov 2026</td>
+<td class="py-3.5 px-space-md">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-sm text-label-sm font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">description</span> Tersedia (PDF)
+                </a>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">
+                  Aman
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Pb Standard (Critical) -->
+<tr class="bg-tertiary-fixed/20 hover:bg-tertiary-fixed/30 transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<div>
+<span>Standar Kalibrasi Timbal (Pb) 1000 ppm</span>
+<span class="block font-label-sm text-[11px] text-on-tertiary-fixed-variant">NIST Traceable CRM • Supelco</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data text-on-tertiary-fixed">CRM-PB-9901</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data font-bold text-error">50 mL <span class="text-on-tertiary-fixed-variant font-normal">(Min: 100 mL)</span></td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">
+                  12 hari lagi (27 Mei 2025)
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-sm text-label-sm font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">description</span> Tersedia (PDF)
+                </a>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold">
+                  Segera Reorder
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="px-2 py-1 bg-primary text-on-primary rounded text-label-sm font-semibold hover:bg-primary-container shadow-xs" type="button">
+                  PO Cepat
+                </button>
+</td>
+</tr>
+<!-- Row 3: PCA Agar -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<div>
+<span>Media Agar Plate Count (PCA)</span>
+<span class="block font-label-sm text-[11px] text-outline">Mikrobiologi Umum • Oxoid CM0325</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">LOT-OX-7718</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data font-semibold text-on-surface">1.2 kg <span class="text-outline font-normal">(Buffer: 500 g)</span></td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">Agu 2027</td>
+<td class="py-3.5 px-space-md">
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-sm text-label-sm font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">description</span> Tersedia (PDF)
+                </a>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">
+                  Stok Cukup
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- TAB 3: AUDIT TRAIL & LOGBOOK SISTEM -->
+<div class="tab-pane hidden flex flex-col gap-space-lg" id="tab-audit">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Audit Trail Logbook (Integritas Data FDA 21 CFR Part 11)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pencatatan kriptografis tanpa modifikasi (immutable ledger), melacak setiap perubahan hasil analit, pengesahan tanda tangan elektronik, dan modifikasi data mentah instrumen.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-numeric-data text-numeric-data font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span> Hash Chain: SHA-256 Valid
+          </span>
+</div>
+</div>
+<!-- Audit Table -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Waktu &amp; Timestamp</th>
+<th class="py-3 px-space-md">Pengguna (Otoritas)</th>
+<th class="py-3 px-space-md">Aktivitas / Event Log</th>
+<th class="py-3 px-space-md">Nilai Sebelum vs Sesudah</th>
+<th class="py-3 px-space-md">Justifikasi Koreksi</th>
+<th class="py-3 px-space-md">IP &amp; Hash Kriptografis</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<!-- Record 1 (The main specified audit row) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap font-numeric-data text-numeric-data">
+<span class="font-bold text-on-surface">14-05-2025</span>
+<span class="block text-outline text-[11px]">10:42:15 WIB</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">apt. Aisyah Putri, M.Si</span>
+<span class="font-numeric-data text-numeric-data text-outline">ID: USR-004 • Lead Analyst</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+                  Update Hasil Spektro
+                </span>
+<span class="block font-numeric-data text-numeric-data font-medium text-on-surface mt-1">Sampel #SMPL-2025-0912</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="p-2 rounded bg-surface-container font-numeric-data text-numeric-data">
+<span class="text-error line-through">Pb: 0.042 mg/L</span> →
+                  <span class="text-primary font-bold">0.045 mg/L</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+<span class="italic font-body-sm text-body-sm">“Koreksi volume titrasi labu 50ml (faktor pengenceran 10x)”</span>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">
+<span class="text-on-surface font-semibold">192.168.1.45</span>
+<span class="block font-numeric-data text-[10px] text-outline uppercase tracking-wider mt-0.5">SHA-256 Valid: 8f9b...a102</span>
+</td>
+</tr>
+<!-- Record 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap font-numeric-data text-numeric-data">
+<span class="font-bold text-on-surface">14-05-2025</span>
+<span class="block text-outline text-[11px]">09:15:02 WIB</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Dr. Ir. Hendra Wijaya</span>
+<span class="font-numeric-data text-numeric-data text-outline">ID: USR-001 • Technical Manager</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">
+                  Validasi Batch CoA
+                </span>
+<span class="block font-numeric-data text-numeric-data font-medium text-on-surface mt-1">Batch #BATCH-QC-889</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="p-2 rounded bg-surface-container font-numeric-data text-numeric-data">
+<span class="text-outline">Status: Draft</span> →
+                  <span class="text-primary font-bold">Verified &amp; Released</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+<span class="italic font-body-sm text-body-sm">“Pemeriksaan kurva R2 &gt; 0.999 terpenuhi”</span>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">
+<span class="text-on-surface font-semibold">192.168.1.12</span>
+<span class="block font-numeric-data text-[10px] text-outline uppercase tracking-wider mt-0.5">SHA-256 Valid: c4e3...9b77</span>
+</td>
+</tr>
+<!-- Record 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md whitespace-nowrap font-numeric-data text-numeric-data">
+<span class="font-bold text-on-surface">14-05-2025</span>
+<span class="block text-outline text-[11px]">08:30:41 WIB</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Bambang S., S.Si</span>
+<span class="font-numeric-data text-numeric-data text-outline">ID: USR-009 • Lab Analyst</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                  Tare Balance Kalibrasi
+                </span>
+<span class="block font-numeric-data text-numeric-data font-medium text-on-surface mt-1">Alat: BAL-METTLER-02</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="p-2 rounded bg-surface-container font-numeric-data text-numeric-data">
+<span class="text-outline">Harian: Pending</span> →
+                  <span class="text-on-surface font-bold">Calibrated (100.0002g)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface">
+<span class="italic font-body-sm text-body-sm">“Pengecekan anak timbang standar E2 rutin”</span>
+</td>
+<td class="py-3.5 px-space-md font-numeric-data text-numeric-data">
+<span class="text-on-surface font-semibold">192.168.1.88</span>
+<span class="block font-numeric-data text-[10px] text-outline uppercase tracking-wider mt-0.5">SHA-256 Valid: e12a...7f40</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- TAB 4: MANAJEMEN ROLE & HAK AKSES (RBAC) -->
+<div class="tab-pane hidden flex flex-col gap-space-lg" id="tab-rbac">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Role Distribution Summary -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Matriks Personel Aktif</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Distribusi Role-Based Access Control (RBAC)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Total 18 akun aktif dengan autentikasi multifaktor (MFA) • Akses terenkripsi TLS 1.3
+          </p>
+</div>
+<div class="flex flex-col gap-space-sm my-space-md">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="p-1.5 rounded-md bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">Analis Laboratorium</span>
+<span class="font-label-sm text-[11px] text-outline">Entri data &amp; preparasi pengujian</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">12 <span class="font-body-sm text-[12px] font-normal text-outline">Akun</span></span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="p-1.5 rounded-md bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-[18px]">checklist</span>
+</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">Penyelia Teknis (QC)</span>
+<span class="font-label-sm text-[11px] text-outline">Verifikasi kurva &amp; validasi duplo</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">3 <span class="font-body-sm text-[12px] font-normal text-outline">Akun</span></span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="p-1.5 rounded-md bg-primary-container/10 text-primary-container">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">Manajer Teknis</span>
+<span class="font-label-sm text-[11px] text-outline">Otorisasi akhir pengesahan sertifikat</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">2 <span class="font-body-sm text-[12px] font-normal text-outline">Akun</span></span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="p-1.5 rounded-md bg-error/10 text-error">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">Admin Sistem &amp; DPO</span>
+<span class="font-label-sm text-[11px] text-outline">Konfigurasi LIMS &amp; audit trail purge lock</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">1 <span class="font-body-sm text-[12px] font-normal text-outline">Akun</span></span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg font-medium transition-colors" type="button">
+          Kelola Hak Akses Pengguna
+        </button>
+</div>
+<!-- Privilege Matrix Grid -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Matriks Hak Akses Modul Utama (ISO 17025 Compliant)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prinsip hak istimewa paling rendah (Principle of Least Privilege)</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">Aktif &amp; Terkunci</span>
+</div>
+<div class="overflow-x-auto my-space-sm">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant uppercase">
+<th class="py-2.5 px-3">Fungsi Modul</th>
+<th class="py-2.5 px-3 text-center">Analis</th>
+<th class="py-2.5 px-3 text-center">Penyelia</th>
+<th class="py-2.5 px-3 text-center">Manajer Teknis</th>
+<th class="py-2.5 px-3 text-center">Admin</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-3 font-medium text-on-surface">Pendaftaran Sampel &amp; Log Sample Baru</td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">horizontal_rule</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-3 font-medium text-on-surface">Entri Hasil Pengujian Spektro &amp; Mikrobiologi</td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">horizontal_rule</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-3 font-medium text-on-surface">Koreksi Angka Hasil Uji (Memerlukan Alasan Audit)</td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-3 font-medium text-on-surface">Penerbitan Sertifikat Analisis (Tanda Tangan Digital)</td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+<td class="py-3 px-3 text-center text-primary"><span class="material-symbols-outlined text-[18px]">check_circle</span></td>
+<td class="py-3 px-3 text-center text-outline-variant"><span class="material-symbols-outlined text-[18px]">block</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3 px-3 font-medium text-on-surface">Pemusnahan atau Arsip Log Audit Trail</td>
+<td class="py-3 px-3 text-center text-error font-bold" colspan="4">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">lock</span> Dilarang Keras • Kebijakan Immutable (WORM Storage)
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Otentikasi Dua Faktor (2FA): <strong>100% Terpasang</strong></span>
+<span class="font-numeric-data text-numeric-data">Sesi Kedaluwarsa Otomatis: 15 Menit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Global Activity Status & Live Node Bar -->
+<div class="mt-space-lg flex flex-col md:flex-row items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-primary animate-ping"></div>
+<span class="font-label-md text-label-md text-on-surface">
+        Integritas LIMS: <strong class="text-primary">Terverifikasi Sinkron</strong> • DB Node ID-JKT-LAB01
+      </span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span>Auto-backup Kripto: <strong class="text-on-surface font-numeric-data">10 Menit lalu</strong></span>
+<span>•</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">Jalankan Diagnostik Audit Manual</span>
+</div>
+</div>
+<script>
+    function switchTab(viewId) {
+      // Hide all panes
+      const panes = document.querySelectorAll('.tab-pane');
+      panes.forEach(pane => pane.classList.add('hidden'));
+
+      // Remove active states from buttons
+      const buttons = document.querySelectorAll('.module-tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs');
+        btn.classList.add('text-on-surface-variant');
+      });
+
+      // Target pane
+      if (viewId === 'qc-view') {
+        document.getElementById('tab-qc').classList.remove('hidden');
+        const activeBtn = document.getElementById('tab-btn-qc');
+        activeBtn.classList.remove('text-on-surface-variant');
+        activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+      } else if (viewId === 'reagent-view') {
+        document.getElementById('tab-reagent').classList.remove('hidden');
+        const activeBtn = document.getElementById('tab-btn-reagent');
+        activeBtn.classList.remove('text-on-surface-variant');
+        activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+      } else if (viewId === 'audit-view') {
+        document.getElementById('tab-audit').classList.remove('hidden');
+        const activeBtn = document.getElementById('tab-btn-audit');
+        activeBtn.classList.remove('text-on-surface-variant');
+        activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+      } else if (viewId === 'rbac-view') {
+        document.getElementById('tab-rbac').classList.remove('hidden');
+        const activeBtn = document.getElementById('tab-btn-rbac');
+        activeBtn.classList.remove('text-on-surface-variant');
+        activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+      }
+    }
+  </script>
+</div></main></div></body></html>

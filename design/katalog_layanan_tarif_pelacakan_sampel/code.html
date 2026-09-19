@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-container": "#bdb2ff",
+          "secondary": "#5f559a",
+          "error-container": "#ffdad6",
+          "background": "#f9f9ff",
+          "surface": "#f9f9ff",
+          "on-primary-fixed": "#001a41",
+          "on-surface-variant": "#414754",
+          "primary-fixed": "#d8e2ff",
+          "on-tertiary": "#ffffff",
+          "surface-variant": "#d8e3fb",
+          "outline-variant": "#c2c6d6",
+          "on-secondary-fixed": "#1b0c53",
+          "surface-bright": "#f9f9ff",
+          "on-tertiary-fixed-variant": "#5b3f47",
+          "secondary-fixed": "#e5deff",
+          "on-primary": "#ffffff",
+          "on-secondary-fixed-variant": "#473d81",
+          "inverse-on-surface": "#ecf1ff",
+          "on-surface": "#111c2d",
+          "surface-container-high": "#dee8ff",
+          "tertiary-fixed": "#ffd9e2",
+          "on-tertiary-fixed": "#2b151c",
+          "on-tertiary-container": "#fffbff",
+          "tertiary": "#72545c",
+          "error": "#ba1a1a",
+          "secondary-fixed-dim": "#c8bfff",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary": "#ffffff",
+          "outline": "#727785",
+          "primary-fixed-dim": "#adc6ff",
+          "on-error": "#ffffff",
+          "on-primary-fixed-variant": "#004494",
+          "on-primary-container": "#fefcff",
+          "tertiary-container": "#8d6c75",
+          "on-error-container": "#93000a",
+          "surface-dim": "#cfdaf2",
+          "on-secondary-container": "#4b4185",
+          "inverse-surface": "#263143",
+          "primary": "#0058bd",
+          "surface-container-highest": "#d8e3fb",
+          "surface-container": "#e7eeff",
+          "surface-tint": "#005ac2",
+          "inverse-primary": "#adc6ff",
+          "surface-container-low": "#f0f3ff",
+          "primary-container": "#1470e8",
+          "tertiary-fixed-dim": "#e4bcc6",
+          "on-background": "#111c2d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "0.75rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.25rem",
+          "gutter-desktop": "1.5rem",
+          "gutter": "1rem",
+          "margin-desktop": "2rem",
+          "space-xl": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "body-md": ["Plus Jakarta Sans"],
+          "numeric-data": ["Inter"],
+          "label-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "numeric-data": ["13px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+          "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><div class="fixed top-0 left-0 right-0 z-50"><div class="w-full h-7 bg-surface-container-high px-gutter-desktop flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[14px]">verified</span><span>Status Lab: <strong class="text-on-surface font-semibold">Terakreditasi KAN ISO/IEC 17025:2017</strong></span><span class="text-outline-variant">•</span><span class="inline-flex items-center gap-1 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Sistem Operasional Normal</span></div><div class="hidden md:flex items-center gap-space-md text-on-surface-variant"><span class="font-numeric-data text-numeric-data">Server Node: ID-JKT-LAB01</span><span class="text-outline-variant">|</span><span class="font-numeric-data text-numeric-data">QC Status: Optimal (99.8%)</span></div></div><header class="w-full h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><img alt="PrecisionLab Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf621CcusSPBjGZ92zUl0TRFgTtEBIT_pJL29ad0WmSr1NksME2ZKTDcBXvqazH3XiH8jF1Xql4lI5kalsDeU6Bu3XWnYfGj-2PQU-xDlHST9C_JMIqGxMILgRZrdFaYWNDMs94zHvJq4anO1nX0rcveh91LBF8LUtBtSAIYlQ3f86O9Hh7_K_6hf0HgzyFmrnSxt9GjinmChv-KQFnxpHSSUjsw98lbMiDAx2MPp4DTP_amsDsetP"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">PrecisionLab</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">LIMS Terintegrasi</span></div></div><div class="flex-1 max-w-md mx-space-lg hidden lg:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-sm" placeholder="Cari kode sampel, batch ID, atau parameter pengujian..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-md py-2 rounded-lg shadow-[0_2px_4px_rgba(0,88,189,0.15)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Pendaftaran Sampel</span></button><div class="relative flex items-center justify-center"><button aria-label="Notifikasi" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-error px-1 font-label-sm text-[9px] font-bold text-on-error">3</span></button></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden sm:block"><p class="font-label-lg text-label-lg text-on-surface leading-tight">apt. Aisyah Putri, M.Si</p><p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Lead Analyst / QC Specialist</p></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnZzeKBj6mEsyj7FqTFjrPPui6bMWSL2Bx90lsfXMo81WqFj7rRVZlz4xbIzGmI9tNqmpH6JThtMGrU07qvOjT9NXZFR-ewqP6O2QIXiS7wn3IA-36whdCXQrDcaOamC-poAejbXhQI0P0F7G6LFGOecxjyWXgA0X4DcP4XZQ5CGN3KSQc6JhzRP3uVXsXz81SOmjBLwIr71ERCTpNNOUSOCjp_isEnS-8JXvIYdpfKBeLM9-it_SP"/></div></div></header></div><aside class="fixed left-0 top-[92px] h-[calc(100vh-92px)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md px-space-sm"><div class="px-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Navigasi Terintegrasi</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="katalog-dan-pemesanan" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Katalog &amp; Pemesanan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="operasional-lab" href="#"><span class="material-symbols-outlined text-[20px]">biotech</span><span>Operasional Lab</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="portal-klien-dan-hasil" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Portal Klien &amp; Hasil</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="admin-qc-dan-audit" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span>Admin, QC &amp; Audit</span></a></nav></div><div class="px-space-md pt-space-md border-t border-outline-variant/20"><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Reagen Stock Alert</span><span class="text-error font-semibold">2 Low</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full w-4/5 rounded-full"></div></div><p class="font-label-sm text-[10px] text-outline mt-1">Batch QC L-889 verifikasi siap</p></div></div></aside><div class="pl-64"><main class="relative pt-[92px] min-h-screen bg-surface w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-lg">
+<div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-24 w-80 h-80 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>KAN LP-749-IDN • ISO/IEC 17025:2017</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-tight">
+          Layanan Pengujian Laboratorium Terakreditasi ISO/IEC 17025:2017
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Akurasi analitis berstandar internasional untuk industri farmasi, pangan, lingkungan, dan komoditas kimia. Akses sertifikat analisis (CoA) digital terotentikasi kriptografis real-time.
+        </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">speed</span>
+<span>Turnaround Time Cepat</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">qr_code_2</span>
+<span>E-CoA Validitas QR</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">ac_unit</span>
+<span>Logistik Suhu Terkendali</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container-low p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">manage_search</span>
+<span class="font-label-lg text-label-lg text-on-surface">Lacak Status Sampel Real-Time</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">Publik</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Masukkan nomor resi atau kode sampel untuk memantau rantai pengujian analitis.
+        </p>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">barcode_scanner</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-lowest rounded-lg font-numeric-data text-numeric-data text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="trackingInput" placeholder="Contoh: PLB-2025-0842" type="text" value="PLB-2025-0842"/>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-2 rounded-lg flex items-center gap-1 shadow-sm transition-all" id="btnTrack" type="button">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Lacak Sampel</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-xs shadow-sm flex flex-col gap-space-xs transition-all" id="trackingResultCard">
+<div class="flex items-center justify-between">
+<span class="font-numeric-data text-numeric-data font-semibold text-primary">Batch: PLB-2025-0842-ENV</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-[10px]">Dalam Pengujian</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-[11px]">
+<span>Matriks: Air Limbah Outlet</span>
+<span class="font-numeric-data">Target: 26 Feb 2025, 16:00</span>
+</div>
+<div class="relative w-full pt-3 pb-1">
+<div class="absolute top-5 left-3 right-3 h-0.5 bg-surface-container-highest"></div>
+<div class="absolute top-5 left-3 w-3/5 h-0.5 bg-primary"></div>
+<div class="relative flex items-center justify-between">
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-numeric-data text-[10px] flex items-center justify-center shadow-sm">✓</span>
+<span class="font-label-sm text-[9px] text-on-surface mt-1">Diterima</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-numeric-data text-[10px] flex items-center justify-center shadow-sm">✓</span>
+<span class="font-label-sm text-[9px] text-on-surface mt-1">Preparasi</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-numeric-data text-[10px] flex items-center justify-center animate-pulse shadow-sm">3</span>
+<span class="font-label-sm text-[9px] text-primary font-bold mt-1">Spektro (Aktif)</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-outline font-numeric-data text-[10px] flex items-center justify-center">4</span>
+<span class="font-label-sm text-[9px] text-outline mt-1">Validasi QC</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-outline font-numeric-data text-[10px] flex items-center justify-center">5</span>
+<span class="font-label-sm text-[9px] text-outline mt-1">CoA Siap</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="catalogSearch" placeholder="Cari parameter uji (misal: Logam Berat, Mikrobiologi, COD/BOD, Vitamin C)..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Urutkan:</span>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-sm py-1.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Paling Populer</option>
+<option>TAT Tercepat (Express)</option>
+<option>Tarif Terendah</option>
+<option>Tarif Tertinggi</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 pt-space-xs scrollbar-none" id="filterChipsContainer">
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm whitespace-nowrap" data-category="all" type="button">Semua Kategori (24)</button>
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-category="pangan" type="button">Pangan &amp; Minuman (8)</button>
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-category="farmasi" type="button">Farmasi &amp; Kosmetik (6)</button>
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-category="lingkungan" type="button">Lingkungan &amp; Air Limbah (5)</button>
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-category="kimia" type="button">Bahan Kimia Industri (3)</button>
+<button class="filter-chip px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface whitespace-nowrap" data-category="klinis" type="button">Klinis &amp; Toksikologi (2)</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">science</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Daftar Parameter Uji &amp; Tarif Baku</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Menampilkan <strong class="text-on-surface" id="catalogCount">5</strong> Layanan Terakreditasi</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_0_rgba(0,0,0,0.06)]">
+<th class="py-3 px-space-md">KODE &amp; PARAMETER</th>
+<th class="py-3 px-space-sm">METODE BAKU</th>
+<th class="py-3 px-space-sm">MATRIKS</th>
+<th class="py-3 px-space-sm">TAT</th>
+<th class="py-3 px-space-sm text-right">TARIF / SAMPEL</th>
+<th class="py-3 px-space-md text-center">AKSI</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface" id="catalogTableBody">
+<tr class="catalog-row hover:bg-surface-container-low/50 transition-colors shadow-[0_1px_0_rgba(0,0,0,0.03)]" data-cat="kimia pangan" data-code="TST-CHM-01" data-name="Analisis Kadar Timbal (Pb) &amp; Kadmium (Cd)" data-price="520000">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-data text-numeric-data font-bold text-primary">TST-CHM-01</span>
+<span class="font-label-lg text-label-lg text-on-surface">Analisis Logam Berat Pb &amp; Cd</span>
+<span class="font-label-sm text-[10px] text-outline">LOD: 0.001 mg/kg • ICP-OES</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm font-label-md text-label-md text-on-surface-variant">
+                  SNI 01-2896-1998
+                </td>
+<td class="py-3.5 px-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Cair / Serbuk</span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1 font-numeric-data text-numeric-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span>3 Hari Kerja</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right">
+<span class="font-numeric-data text-[15px] font-bold text-on-surface">Rp 520.000</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="btn-detail p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Detail Metode" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="btn-add-order inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" data-code="TST-CHM-01" data-name="Logam Berat Pb &amp; Cd" data-price="520000" data-tat="3 Hari" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Pesan</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="catalog-row hover:bg-surface-container-low/50 transition-colors shadow-[0_1px_0_rgba(0,0,0,0.03)]" data-cat="pangan" data-code="TST-MB-04" data-name="Uji Angka Lempeng Total (ALT) &amp; Koliform" data-price="350000">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-numeric-data text-numeric-data font-bold text-primary">TST-MB-04</span>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[9px] font-bold">Populer</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Uji ALT &amp; Koliform Total</span>
+<span class="font-label-sm text-[10px] text-outline">Kultur Mikrobiologi Aerob</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm font-label-md text-label-md text-on-surface-variant">
+                  ISO 4833-1:2013
+                </td>
+<td class="py-3.5 px-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Makanan, Minuman</span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1 font-numeric-data text-numeric-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span>5 Hari Kerja</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right">
+<span class="font-numeric-data text-[15px] font-bold text-on-surface">Rp 350.000</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="btn-detail p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Detail Metode" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="btn-add-order inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" data-code="TST-MB-04" data-name="ALT &amp; Koliform" data-price="350000" data-tat="5 Hari" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Pesan</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="catalog-row hover:bg-surface-container-low/50 transition-colors shadow-[0_1px_0_rgba(0,0,0,0.03)]" data-cat="lingkungan" data-code="TST-ENV-12" data-name="Analisis BOD5 &amp; COD Air Limbah" data-price="680000">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-numeric-data text-numeric-data font-bold text-primary">TST-ENV-12</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-[9px] font-bold">Express Available</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Paket Uji BOD5 &amp; COD Limbah</span>
+<span class="font-label-sm text-[10px] text-outline">Titrasi &amp; Spektrofotometri UV-Vis</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm font-label-md text-label-md text-on-surface-variant">
+                  APHA 5210 B • 5220 D
+                </td>
+<td class="py-3.5 px-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Air Permukaan / Limbah</span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1 font-numeric-data text-numeric-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span>5 Hari Kerja</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right">
+<span class="font-numeric-data text-[15px] font-bold text-on-surface">Rp 680.000</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="btn-detail p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Detail Metode" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="btn-add-order inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" data-code="TST-ENV-12" data-name="BOD5 &amp; COD Limbah" data-price="680000" data-tat="5 Hari" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Pesan</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="catalog-row hover:bg-surface-container-low/50 transition-colors shadow-[0_1px_0_rgba(0,0,0,0.03)]" data-cat="farmasi" data-code="TST-PHR-09" data-name="Uji Stabilitas Dipercepat Sediaan Obat" data-price="2450000">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-data text-numeric-data font-bold text-primary">TST-PHR-09</span>
+<span class="font-label-lg text-label-lg text-on-surface">Uji Stabilitas Dipercepat ICH</span>
+<span class="font-label-sm text-[10px] text-outline">Chamber 40°C ± 2°C / 75% RH ± 5%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm font-label-md text-label-md text-on-surface-variant">
+                  ICH Q1A(R2) Guideline
+                </td>
+<td class="py-3.5 px-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Tablet, Kapsul, Krim</span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1 font-numeric-data text-numeric-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span>14 Hari (Interim)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right">
+<span class="font-numeric-data text-[15px] font-bold text-on-surface">Rp 2.450.000</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="btn-detail p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Detail Metode" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="btn-add-order inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" data-code="TST-PHR-09" data-name="Stabilitas Dipercepat ICH" data-price="2450000" data-tat="14 Hari" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Pesan</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="catalog-row hover:bg-surface-container-low/50 transition-colors shadow-[0_1px_0_rgba(0,0,0,0.03)]" data-cat="pangan farmasi" data-code="TST-NUT-02" data-name="Analisis Kadar Vitamin C (Asam Askorbat)" data-price="420000">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-numeric-data text-numeric-data font-bold text-primary">TST-NUT-02</span>
+<span class="font-label-lg text-label-lg text-on-surface">Kadar Vitamin C (HPLC-UV)</span>
+<span class="font-label-sm text-[10px] text-outline">Kromatografi Cair Kinerja Tinggi</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm font-label-md text-label-md text-on-surface-variant">
+                  AOAC 967.21 / HPLC
+                </td>
+<td class="py-3.5 px-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Sirup, Jus, Suplemen</span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1 font-numeric-data text-numeric-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span>3 Hari Kerja</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right">
+<span class="font-numeric-data text-[15px] font-bold text-on-surface">Rp 420.000</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="btn-detail p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Detail Metode" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="btn-add-order inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" data-code="TST-NUT-02" data-name="Kadar Vitamin C HPLC" data-price="420000" data-tat="3 Hari" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Pesan</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-sm bg-surface-container-low/40 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+            Biaya belum termasuk PPN 11% dan penyiapan sertifikat fisik bertanda tangan basah jika diminta.
+          </span>
+<a class="text-primary hover:underline flex items-center gap-0.5" href="#">
+<span>Unduh Brosur Lengkap (PDF)</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Akreditasi KAN</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sertifikasi nomor LP-749-IDN menjamin hasil analitis diakui secara legal lintas regulator: BPOM, KLHK, Kemenkes, &amp; Bea Cukai.
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary mb-1">
+<span class="material-symbols-outlined text-[24px]">shield_with_heart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Validasi CoA QR</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Setiap lembar Certificate of Analysis memuat QR Code unik terenkripsi SHA-256 untuk memverifikasi keaslian tanpa risiko pemalsuan.
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/60 flex items-center justify-center text-tertiary mb-1">
+<span class="material-symbols-outlined text-[24px]">thermostat</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cold Chain Fleet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Layanan penjemputan spesimen menggunakan coolbox bersertifikasi kalibrasi logger suhu 2°C–8°C atau -20°C kontinu.
+          </p>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md sticky top-[108px]">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">shopping_cart_checkout</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Formulir Pemesanan Cepat</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Estimasi biaya &amp; penjadwalan</p>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-numeric-data text-[12px] flex items-center justify-center font-bold" id="selectedCountBadge">1</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Parameter Terpilih:</span>
+<div class="flex flex-col gap-space-xs max-h-48 overflow-y-auto pr-1" id="selectedItemsContainer">
+<div class="p-space-xs bg-surface-container-low rounded-lg flex items-center justify-between gap-space-xs" data-code="TST-CHM-01">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Logam Berat Pb &amp; Cd (ICP-OES)</span>
+<span class="font-numeric-data text-[11px] text-on-surface-variant">TST-CHM-01 • 3 Hari</span>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="font-numeric-data text-numeric-data font-semibold text-primary">Rp 520.000</span>
+<button class="remove-order-item text-outline hover:text-error transition-colors" data-code="TST-CHM-01" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface">Jumlah Sampel / Replikat</label>
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface font-bold text-lg flex items-center justify-center hover:bg-surface-container-highest" id="btnMinusQty" type="button">-</button>
+<input class="flex-1 text-center py-1.5 bg-surface-container-low rounded-lg font-numeric-data text-numeric-data text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" id="sampleQtyInput" min="1" type="number" value="1"/>
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface font-bold text-lg flex items-center justify-center hover:bg-surface-container-highest" id="btnPlusQty" type="button">+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface">Metode Pengiriman Sampel</label>
+<div class="grid grid-cols-1 gap-space-xs">
+<label class="delivery-option flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-0.5 text-primary focus:ring-0" name="deliveryMethod" type="radio" value="dropoff"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Drop-off Mandiri ke Lab</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">PrecisionLab Central Hub, Jakarta Barat (Gratis)</span>
+</div>
+</label>
+<label class="delivery-option flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="mt-0.5 text-primary focus:ring-0" name="deliveryMethod" type="radio" value="pickup"/>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Jemput Coolbox Berizin</span>
+<span class="font-numeric-data text-[11px] text-primary font-bold">+Rp 150.000</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Kurir lab terakreditasi suhu 4°C (Jabodetabek)</span>
+</div>
+</label>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Subtotal Pengujian</span>
+<span class="font-numeric-data text-numeric-data text-on-surface" id="subtotalDisplay">Rp 520.000</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Biaya Logistik Sampel</span>
+<span class="font-numeric-data text-numeric-data text-on-surface" id="logisticsDisplay">Rp 0</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>PPN (11%)</span>
+<span class="font-numeric-data text-numeric-data text-on-surface" id="taxDisplay">Rp 57.200</span>
+</div>
+<div class="pt-space-xs mt-1 border-t border-surface-container-highest flex items-center justify-between">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Total Estimasi</span>
+<span class="font-label-sm text-[10px] text-outline">Termasuk pajak &amp; sertifikat CoA</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="totalDisplay">Rp 577.200</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm flex items-center justify-center gap-space-xs transition-all" id="btnCheckout" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>Ajukan Permohonan Pengujian</span>
+</button>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md py-2.5 rounded-lg flex items-center justify-center gap-space-xs transition-all" id="btnDownloadFPP" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Unduh Formulir FPP (PDF Kosong)</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-space-xs text-on-surface-variant font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-primary text-[14px]">lock</span>
+<span>Data permohonan terlindungi ISO 27001 &amp; NDA Lab</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-space-md" id="methodModal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-xl overflow-hidden flex flex-col">
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">biotech</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modalTitle">Detail Prosedur Analisis</h3>
+</div>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface" id="btnCloseModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm max-h-[75vh] overflow-y-auto font-body-sm text-body-sm text-on-surface">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-bold">INFORMASI AKREDITASI &amp; INSTRUMEN</span>
+<p class="text-on-surface-variant">Metode terakreditasi penuh KAN LP-749-IDN. Dikerjakan menggunakan instrumen Agilent 5800 ICP-OES dengan limit deteksi 0.001 mg/kg dan kalibrasi multi-elemen traceable NIST.</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Persyaratan Sampel Masuk:</span>
+<ul class="list-disc pl-5 text-on-surface-variant space-y-1">
+<li>Minimal volume matriks cair: 250 mL (wadah botol HDPE terbilas asam nitrat).</li>
+<li>Minimal bobot matriks serbuk: 50 gram dalam aluminium pouch hampa udara.</li>
+<li>Sertakan Lembar Data Keselamatan Bahan (MSDS) bila sampel beracun/korosif.</li>
+</ul>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Tahapan Uji Standar Operasional:</span>
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-start gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-fixed text-on-primary-fixed font-numeric-data text-[11px] flex items-center justify-center font-bold">1</span>
+<div>
+<strong class="text-on-surface font-label-md">Destruksi Gelombang Mikro (Microwave Digestion):</strong>
+<p class="text-on-surface-variant text-[11px]">Sampel didigesti dengan HNO3 berkemurnian ultra-pure pada suhu 180°C.</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-fixed text-on-primary-fixed font-numeric-data text-[11px] flex items-center justify-center font-bold">2</span>
+<div>
+<strong class="text-on-surface font-label-md">Pembacaan Plasma Emisi:</strong>
+<p class="text-on-surface-variant text-[11px]">Analisis simultan panjang gelombang Pb (220.353 nm) &amp; Cd (228.802 nm).</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-fixed text-on-primary-fixed font-numeric-data text-[11px] flex items-center justify-center font-bold">3</span>
+<div>
+<strong class="text-on-surface font-label-md">Audit Blanko &amp; Spike Recovery:</strong>
+<p class="text-on-surface-variant text-[11px]">Memastikan rentang recovery berada pada 90%–110% sebelum rilis data.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-space-md py-1.5 rounded-lg shadow-sm" id="btnConfirmModal" type="button">
+          Tutup
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCatalogPage() {
+    let orderItems = [
+      { code: 'TST-CHM-01', name: 'Logam Berat Pb & Cd', price: 520000, tat: '3 Hari' }
+    ];
+    let sampleQty = 1;
+    let pickupMethod = 'dropoff';
+
+    const catalogTableBody = document.getElementById('catalogTableBody');
+    const catalogSearch = document.getElementById('catalogSearch');
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const catalogCount = document.getElementById('catalogCount');
+
+    const selectedItemsContainer = document.getElementById('selectedItemsContainer');
+    const selectedCountBadge = document.getElementById('selectedCountBadge');
+    const sampleQtyInput = document.getElementById('sampleQtyInput');
+    const btnMinusQty = document.getElementById('btnMinusQty');
+    const btnPlusQty = document.getElementById('btnPlusQty');
+    const subtotalDisplay = document.getElementById('subtotalDisplay');
+    const logisticsDisplay = document.getElementById('logisticsDisplay');
+    const taxDisplay = document.getElementById('taxDisplay');
+    const totalDisplay = document.getElementById('totalDisplay');
+
+    const deliveryRadios = document.querySelectorAll('input[name="deliveryMethod"]');
+    const btnTrack = document.getElementById('btnTrack');
+    const trackingInput = document.getElementById('trackingInput');
+    const trackingResultCard = document.getElementById('trackingResultCard');
+
+    const methodModal = document.getElementById('methodModal');
+    const btnCloseModal = document.getElementById('btnCloseModal');
+    const btnConfirmModal = document.getElementById('btnConfirmModal');
+    const btnDetailList = document.querySelectorAll('.btn-detail');
+
+    function formatRupiah(amount) {
+      return 'Rp ' + amount.toLocaleString('id-ID');
+    }
+
+    function calculateOrderTotals() {
+      const itemsSum = orderItems.reduce((acc, item) => acc + item.price, 0);
+      const subtotal = itemsSum * sampleQty;
+      const logisticsFee = pickupMethod === 'pickup' ? 150000 : 0;
+      const tax = Math.round((subtotal + logisticsFee) * 0.11);
+      const total = subtotal + logisticsFee + tax;
+
+      subtotalDisplay.textContent = formatRupiah(subtotal);
+      logisticsDisplay.textContent = formatRupiah(logisticsFee);
+      taxDisplay.textContent = formatRupiah(tax);
+      totalDisplay.textContent = formatRupiah(total);
+      selectedCountBadge.textContent = orderItems.length;
+    }
+
+    function renderOrderList() {
+      selectedItemsContainer.innerHTML = '';
+      if (orderItems.length === 0) {
+        selectedItemsContainer.innerHTML = `
+          <div class="py-4 text-center text-on-surface-variant font-body-sm text-body-sm">
+            Belum ada parameter dipilih. Pilih dari tabel katalog.
+          </div>
+        `;
+      } else {
+        orderItems.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'p-space-xs bg-surface-container-low rounded-lg flex items-center justify-between gap-space-xs';
+          div.setAttribute('data-code', item.code);
+          div.innerHTML = `
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-surface truncate">${item.name}</span>
+              <span class="font-numeric-data text-[11px] text-on-surface-variant">${item.code} &bull; ${item.tat}</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-numeric-data text-numeric-data font-semibold text-primary">${formatRupiah(item.price)}</span>
+              <button type="button" class="remove-order-item text-outline hover:text-error transition-colors" data-code="${item.code}">
+                <span class="material-symbols-outlined text-[16px]">close</span>
+              </button>
+            </div>
+          `;
+          selectedItemsContainer.appendChild(div);
+        });
+      }
+
+      document.querySelectorAll('.remove-order-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const code = btn.getAttribute('data-code');
+          orderItems = orderItems.filter(it => it.code !== code);
+          renderOrderList();
+          calculateOrderTotals();
+        });
+      });
+
+      calculateOrderTotals();
+    }
+
+    document.querySelectorAll('.btn-add-order').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const code = btn.getAttribute('data-code');
+        const name = btn.getAttribute('data-name');
+        const price = parseInt(btn.getAttribute('data-price'), 10);
+        const tat = btn.getAttribute('data-tat');
+
+        const existing = orderItems.find(it => it.code === code);
+        if (!existing) {
+          orderItems.push({ code, name, price, tat });
+          renderOrderList();
+        }
+      });
+    });
+
+    btnMinusQty.addEventListener('click', () => {
+      if (sampleQty > 1) {
+        sampleQty--;
+        sampleQtyInput.value = sampleQty;
+        calculateOrderTotals();
+      }
+    });
+
+    btnPlusQty.addEventListener('click', () => {
+      sampleQty++;
+      sampleQtyInput.value = sampleQty;
+      calculateOrderTotals();
+    });
+
+    sampleQtyInput.addEventListener('change', (e) => {
+      const val = parseInt(e.target.value, 10);
+      sampleQty = (!isNaN(val) && val >= 1) ? val : 1;
+      sampleQtyInput.value = sampleQty;
+      calculateOrderTotals();
+    });
+
+    deliveryRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        pickupMethod = e.target.value;
+        calculateOrderTotals();
+      });
+    });
+
+    function applyFilterAndSearch() {
+      const query = catalogSearch.value.toLowerCase().trim();
+      const activeCategoryBtn = document.querySelector('.filter-chip.bg-primary');
+      const activeCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
+
+      const rows = catalogTableBody.querySelectorAll('.catalog-row');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const rowCategory = row.getAttribute('data-cat') || '';
+        const rowName = (row.getAttribute('data-name') || '').toLowerCase();
+        const rowCode = (row.getAttribute('data-code') || '').toLowerCase();
+
+        const matchCategory = (activeCategory === 'all') || rowCategory.includes(activeCategory);
+        const matchQuery = !query || rowName.includes(query) || rowCode.includes(query);
+
+        if (matchCategory && matchQuery) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      catalogCount.textContent = visibleCount;
+    }
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        applyFilterAndSearch();
+      });
+    });
+
+    catalogSearch.addEventListener('input', applyFilterAndSearch);
+
+    btnTrack.addEventListener('click', () => {
+      const val = trackingInput.value.trim();
+      if (!val) return;
+      trackingResultCard.classList.add('ring-2', 'ring-primary', 'ring-offset-1');
+      setTimeout(() => {
+        trackingResultCard.classList.remove('ring-2', 'ring-primary', 'ring-offset-1');
+      }, 700);
+    });
+
+    btnDetailList.forEach(btn => {
+      btn.addEventListener('click', () => {
+        methodModal.classList.remove('hidden');
+        methodModal.classList.add('flex');
+      });
+    });
+
+    function closeModal() {
+      methodModal.classList.add('hidden');
+      methodModal.classList.remove('flex');
+    }
+
+    btnCloseModal.addEventListener('click', closeModal);
+    btnConfirmModal.addEventListener('click', closeModal);
+    methodModal.addEventListener('click', (e) => {
+      if (e.target === methodModal) closeModal();
+    });
+
+    document.getElementById('btnCheckout').addEventListener('click', () => {
+      if (orderItems.length === 0) {
+        alert('Pilih setidaknya 1 parameter pengujian.');
+        return;
+      }
+      alert('Permohonan pengujian ' + orderItems.length + ' parameter dengan total ' + totalDisplay.textContent + ' berhasil diajukan. Petugas kami akan mengonfirmasi detail chain of custody melalui email/WhatsApp.');
+    });
+
+    document.getElementById('btnDownloadFPP').addEventListener('click', () => {
+      alert('Mengunduh Formulir Permohonan Pengujian (FPP-ISO17025-V2.pdf)...');
+    });
+
+    renderOrderList();
+  })();
+</script></main></div></body></html>

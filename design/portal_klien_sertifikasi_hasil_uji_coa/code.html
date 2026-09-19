@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-container": "#bdb2ff",
+          "secondary": "#5f559a",
+          "error-container": "#ffdad6",
+          "background": "#f9f9ff",
+          "surface": "#f9f9ff",
+          "on-primary-fixed": "#001a41",
+          "on-surface-variant": "#414754",
+          "primary-fixed": "#d8e2ff",
+          "on-tertiary": "#ffffff",
+          "surface-variant": "#d8e3fb",
+          "outline-variant": "#c2c6d6",
+          "on-secondary-fixed": "#1b0c53",
+          "surface-bright": "#f9f9ff",
+          "on-tertiary-fixed-variant": "#5b3f47",
+          "secondary-fixed": "#e5deff",
+          "on-primary": "#ffffff",
+          "on-secondary-fixed-variant": "#473d81",
+          "inverse-on-surface": "#ecf1ff",
+          "on-surface": "#111c2d",
+          "surface-container-high": "#dee8ff",
+          "tertiary-fixed": "#ffd9e2",
+          "on-tertiary-fixed": "#2b151c",
+          "on-tertiary-container": "#fffbff",
+          "tertiary": "#72545c",
+          "error": "#ba1a1a",
+          "secondary-fixed-dim": "#c8bfff",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary": "#ffffff",
+          "outline": "#727785",
+          "primary-fixed-dim": "#adc6ff",
+          "on-error": "#ffffff",
+          "on-primary-fixed-variant": "#004494",
+          "on-primary-container": "#fefcff",
+          "tertiary-container": "#8d6c75",
+          "on-error-container": "#93000a",
+          "surface-dim": "#cfdaf2",
+          "on-secondary-container": "#4b4185",
+          "inverse-surface": "#263143",
+          "primary": "#0058bd",
+          "surface-container-highest": "#d8e3fb",
+          "surface-container": "#e7eeff",
+          "surface-tint": "#005ac2",
+          "inverse-primary": "#adc6ff",
+          "surface-container-low": "#f0f3ff",
+          "primary-container": "#1470e8",
+          "tertiary-fixed-dim": "#e4bcc6",
+          "on-background": "#111c2d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "1rem",
+          "space-xs": "0.25rem",
+          "space-md": "0.75rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.25rem",
+          "gutter-desktop": "1.5rem",
+          "gutter": "1rem",
+          "margin-desktop": "2rem",
+          "space-xl": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "body-md": ["Plus Jakarta Sans"],
+          "numeric-data": ["Inter"],
+          "label-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "numeric-data": ["13px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+          "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><div class="fixed top-0 left-0 right-0 z-50"><div class="w-full h-7 bg-surface-container-high px-gutter-desktop flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[14px]">verified</span><span>Status Lab: <strong class="text-on-surface font-semibold">Terakreditasi KAN ISO/IEC 17025:2017</strong></span><span class="text-outline-variant">•</span><span class="inline-flex items-center gap-1 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Sistem Operasional Normal</span></div><div class="hidden md:flex items-center gap-space-md text-on-surface-variant"><span class="font-numeric-data text-numeric-data">Server Node: ID-JKT-LAB01</span><span class="text-outline-variant">|</span><span class="font-numeric-data text-numeric-data">QC Status: Optimal (99.8%)</span></div></div><header class="w-full h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><img alt="PrecisionLab Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf621CcusSPBjGZ92zUl0TRFgTtEBIT_pJL29ad0WmSr1NksME2ZKTDcBXvqazH3XiH8jF1Xql4lI5kalsDeU6Bu3XWnYfGj-2PQU-xDlHST9C_JMIqGxMILgRZrdFaYWNDMs94zHvJq4anO1nX0rcveh91LBF8LUtBtSAIYlQ3f86O9Hh7_K_6hf0HgzyFmrnSxt9GjinmChv-KQFnxpHSSUjsw98lbMiDAx2MPp4DTP_amsDsetP"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">PrecisionLab</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">LIMS Terintegrasi</span></div></div><div class="flex-1 max-w-md mx-space-lg hidden lg:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-sm" placeholder="Cari kode sampel, batch ID, atau parameter pengujian..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-md py-2 rounded-lg shadow-[0_2px_4px_rgba(0,88,189,0.15)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>Pendaftaran Sampel</span></button><div class="relative flex items-center justify-center"><button aria-label="Notifikasi" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-error px-1 font-label-sm text-[9px] font-bold text-on-error">3</span></button></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden sm:block"><p class="font-label-lg text-label-lg text-on-surface leading-tight">apt. Aisyah Putri, M.Si</p><p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Lead Analyst / QC Specialist</p></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnZzeKBj6mEsyj7FqTFjrPPui6bMWSL2Bx90lsfXMo81WqFj7rRVZlz4xbIzGmI9tNqmpH6JThtMGrU07qvOjT9NXZFR-ewqP6O2QIXiS7wn3IA-36whdCXQrDcaOamC-poAejbXhQI0P0F7G6LFGOecxjyWXgA0X4DcP4XZQ5CGN3KSQc6JhzRP3uVXsXz81SOmjBLwIr71ERCTpNNOUSOCjp_isEnS-8JXvIYdpfKBeLM9-it_SP"/></div></div></header></div><aside class="fixed left-0 top-[92px] h-[calc(100vh-92px)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md px-space-sm"><div class="px-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Navigasi Terintegrasi</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="katalog-dan-pemesanan" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Katalog &amp; Pemesanan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="operasional-lab" href="#"><span class="material-symbols-outlined text-[20px]">biotech</span><span>Operasional Lab</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="portal-klien-dan-hasil" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Portal Klien &amp; Hasil</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-body-md text-body-md transition-all" data-path="admin-qc-dan-audit" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span>Admin, QC &amp; Audit</span></a></nav></div><div class="px-space-md pt-space-md border-t border-outline-variant/20"><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Reagen Stock Alert</span><span class="text-error font-semibold">2 Low</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full w-4/5 rounded-full"></div></div><p class="font-label-sm text-[10px] text-outline mt-1">Batch QC L-889 verifikasi siap</p></div></div></aside><div class="pl-64"><main class="relative pt-[92px] min-h-screen bg-surface w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<script>
+    (function() {
+      const activeLink = document.querySelector('nav a[data-path="portal-klien-dan-hasil"]');
+      if (activeLink) {
+        document.querySelectorAll('nav a').forEach(el => {
+          el.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          el.classList.add('text-on-surface-variant');
+        });
+        activeLink.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'rounded-lg', 'shadow-sm');
+        activeLink.classList.remove('text-on-surface-variant');
+      }
+    })();
+  </script>
+<!-- Top Ambient Banner / Breadcrumb & Client Summary -->
+<div class="relative w-full rounded-xl bg-surface-container-lowest p-space-lg shadow-sm mb-space-lg overflow-hidden">
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-primary-fixed opacity-30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[32px]">domain</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">PT Tirta Mandiri Abadi</h1>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              ID: CL-8921
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 flex items-center gap-2">
+<span>Industri Air Minum &amp; Pengolahan Pangan</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-semibold font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> SLA Prioritas Gold
+            </span>
+</p>
+</div>
+</div>
+<!-- Financial & Testing Limits Card Strip -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Limit Kredit Uji</div>
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">Rp 84.500.000 <span class="text-outline text-label-sm font-normal">/ 100M</span></div>
+</div>
+</div>
+<div class="bg-tertiary-fixed/40 px-space-md py-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-error">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-error font-semibold uppercase tracking-wider">1 Tagihan Menunggu</div>
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">Rp 12.850.000</div>
+</div>
+<button class="ml-2 bg-error hover:bg-on-error-container text-on-error font-label-sm text-label-sm px-space-sm py-1 rounded-lg transition-colors shadow-sm" onclick="document.getElementById('invoice-drawer').classList.toggle('hidden')" type="button">
+            Bayar
+          </button>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-secondary">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Batch Pengujian</div>
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">14 Aktif <span class="text-primary font-semibold">(2 Prioritas)</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Search & Order Tracker Toolbar -->
+<div class="mt-space-lg pt-space-md bg-surface-container/50 -mx-space-lg -mb-space-lg px-space-lg py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest text-on-surface rounded-lg font-body-sm text-body-sm placeholder:text-outline focus:outline-none shadow-sm" placeholder="Lacak cepat No. Order (PO), No. Sampel (mis. SMP-2025-081), atau nomor batch..." type="text"/>
+</div>
+<button class="bg-surface-container-lowest text-on-surface hover:bg-surface-container-high px-space-md py-2 rounded-lg font-label-md text-label-md flex items-center gap-1 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span> Filter
+        </button>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Sinkronisasi LIMS Terakhir: <strong class="text-on-surface font-numeric-data">Hari ini, 14:28:10 WIB</strong></span>
+</div>
+</div>
+</div>
+<!-- Main Grid: Live Tracking & Featured CoA Spotlight -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Active Order Interactive Telemetry Tracking (7 cols) -->
+<div class="xl:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[24px]">science</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Order #ORD-2025-0412</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                  Air Limbah Industri Semester I
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Surat Permohonan Uji: PO-TMA/V/2025-992 • PIC Lab: Dr. Ir. Hendra Gunawan</p>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-numeric-data text-label-sm font-bold">
+              EST. SELESAI BESOK 16:00 WIB
+            </span>
+</div>
+</div>
+<!-- Specimen Metadata Micro Matrix -->
+<div class="grid grid-cols-3 gap-space-sm bg-surface-container-low p-space-md rounded-lg mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Matriks Sampel</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Effluent Inlet &amp; Outlet</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Total Parameter</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">18 Parameter Fisika-Kimia</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Suhu Penerimaan</span>
+<span class="font-numeric-data text-numeric-data text-on-surface font-semibold">3.8 °C (Cool Box Terkalibrasi)</span>
+</div>
+</div>
+<!-- Dynamic Timeline Stepper with Status Glow -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between text-label-md font-label-md mb-2">
+<span class="text-on-surface font-semibold">Progres Pengujian Terintegrasi</span>
+<span class="font-numeric-data text-primary font-bold">Tahap 3 dari 5 (78% Complete)</span>
+</div>
+<!-- Stepper Visual -->
+<div class="grid grid-cols-5 gap-2 relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface mt-1.5">Diterima</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-numeric-data">12 Mei, 09:15</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface mt-1.5">Ekstraksi Kimia</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-numeric-data">13 Mei, 14:00</span>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex flex-col items-center text-center relative">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm ring-4 ring-primary-fixed shadow-md animate-pulse">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary mt-1.5">Logam Berat (90%)</span>
+<span class="font-label-sm text-[10px] text-primary font-numeric-data">ICP-OES Berjalan</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">
+                4
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Verifikasi QC</span>
+<span class="font-label-sm text-[10px] text-outline">Antrian Lead Analyst</span>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">
+                5
+              </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Penerbitan CoA</span>
+<span class="font-label-sm text-[10px] text-outline">Digital Signature</span>
+</div>
+</div>
+<!-- Progress Bar Ribbon -->
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-3">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full w-[78%] rounded-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+<!-- Micro Alert / Telemetry Note -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between text-on-surface-variant text-body-sm font-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span>Analisis AAS &amp; ICP-OES menunjukkan presisi RPD &lt; 2.4%. Kalibrasi instrumen terverifikasi KAN.</span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold flex items-center gap-1" type="button">
+          Buku Log Sampel <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Featured Certificate of Analysis Miniature Preview Card (5 cols) -->
+<div class="xl:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative">
+<div class="flex items-center justify-between border-b pb-space-sm border-surface-container-high mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">workspace_premium</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Preview CoA Terverifikasi</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> ISO 17025 Compliant
+        </span>
+</div>
+<!-- Mini Certificate Layout Simulation -->
+<div class="bg-surface p-space-md rounded-lg shadow-inner text-on-surface relative overflow-hidden">
+<!-- Watermark / Micro Security Print -->
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
+<span class="font-headline-lg text-[64px] font-extrabold uppercase -rotate-12 text-primary">PRECISIONLAB</span>
+</div>
+<!-- Mini Header of Certificate -->
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-xs">PL</div>
+<div>
+<div class="font-label-sm text-[11px] font-bold tracking-tight text-on-surface">LABORATORIUM PENGUJI PRECISIONLAB</div>
+<div class="font-label-sm text-[9px] text-on-surface-variant">Komite Akreditasi Nasional • LP-842-IDN</div>
+</div>
+</div>
+<div class="text-right font-numeric-data text-[10px] text-on-surface-variant">
+            CoA/PLB/V/2025/1042
+          </div>
+</div>
+<!-- Sample Details Sub-header -->
+<div class="py-2 grid grid-cols-2 gap-2 text-[11px] border-b border-outline-variant/20">
+<div>
+<span class="text-outline block text-[9px] uppercase font-semibold">Sampel / Pelanggan</span>
+<strong class="text-on-surface">Air Minum Dalam Kemasan (AMDK)</strong>
+</div>
+<div class="text-right">
+<span class="text-outline block text-[9px] uppercase font-semibold">Tanggal Pengesahan</span>
+<strong class="font-numeric-data text-on-surface">14 Mei 2025</strong>
+</div>
+</div>
+<!-- Mini Results Grid -->
+<div class="py-2">
+<div class="grid grid-cols-12 text-[10px] font-bold text-on-surface-variant bg-surface-container-high px-1.5 py-1 rounded">
+<div class="col-span-5">Parameter Uji</div>
+<div class="col-span-3 text-right">Hasil Uji</div>
+<div class="col-span-4 text-right">Baku Mutu (BMR)</div>
+</div>
+<div class="divide-y divide-surface-container-high text-[11px]">
+<div class="grid grid-cols-12 px-1.5 py-1 font-numeric-data">
+<div class="col-span-5 font-sans font-medium">Arsen (As)</div>
+<div class="col-span-3 text-right font-bold text-primary">&lt; 0.001 mg/L</div>
+<div class="col-span-4 text-right text-on-surface-variant">Maks 0.01 mg/L</div>
+</div>
+<div class="grid grid-cols-12 px-1.5 py-1 font-numeric-data">
+<div class="col-span-5 font-sans font-medium">Timbal (Pb)</div>
+<div class="col-span-3 text-right font-bold text-primary">&lt; 0.002 mg/L</div>
+<div class="col-span-4 text-right text-on-surface-variant">Maks 0.01 mg/L</div>
+</div>
+<div class="grid grid-cols-12 px-1.5 py-1 font-numeric-data">
+<div class="col-span-5 font-sans font-medium">Escherichia coli</div>
+<div class="col-span-3 text-right font-bold text-primary">0 CFU/100mL</div>
+<div class="col-span-4 text-right text-on-surface-variant">0 CFU/100mL</div>
+</div>
+</div>
+</div>
+<!-- Digital Verification Stamp & Hash -->
+<div class="pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<!-- Simulated QR Code SVG -->
+<div class="w-10 h-10 bg-surface-container-lowest p-1 rounded border border-outline-variant/30 flex items-center justify-center">
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h2v4h-2v-4zm-4-2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2zm-4-4h4v2h-4v-2z"></path>
+</svg>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 font-label-sm text-[9px] font-bold text-primary bg-primary-fixed px-1.5 py-0.2 rounded">
+<span class="material-symbols-outlined text-[10px]">lock</span> BSrE SIGNED
+              </span>
+<p class="font-numeric-data text-[8px] text-outline truncate max-w-[140px] mt-0.5">SHA: e3b0c44298fc1c149afbf4c8996fb92427ae41e4</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[9px] text-on-surface-variant block">Manajer Teknis</span>
+<span class="font-label-sm text-[10px] font-bold text-on-surface">Dr. Aisyah Putri</span>
+</div>
+</div>
+</div>
+<!-- Actions for Document Preview -->
+<div class="flex items-center gap-space-sm mt-space-md">
+<a class="flex-1 bg-primary hover:bg-primary-container text-on-primary py-2 px-space-sm rounded-lg font-label-md text-label-md font-semibold text-center flex items-center justify-center gap-1 shadow-sm transition-colors" href="#download-pdf">
+<span class="material-symbols-outlined text-[18px]">download</span> Unduh Sertifikat (PDF)
+        </a>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1 transition-colors" onclick="document.getElementById('qr-modal').classList.toggle('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span> Verifikasi Publik
+        </button>
+</div>
+</div>
+</div>
+<!-- Historical CoA Table & Analytical Archive -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-lg">
+<!-- Table Header & Multi-Filter Pill Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Arsip Laporan Hasil Uji (LHU / CoA)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dokumen resmi berstempel elektronik tersertifikasi BSrE dan sah secara hukum</p>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-bold shadow-sm" type="button">
+          Semua (24)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+          Selesai &amp; Siap Unduh (18)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+          Sedang Berjalan (4)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-error hover:bg-tertiary-fixed/30 font-label-sm text-label-sm font-semibold transition-colors" type="button">
+          Menunggu Pembayaran (2)
+        </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 text-on-surface-variant font-label-sm text-label-sm border-b-2 border-surface-container-high">
+<th class="py-3 px-space-md rounded-l-lg">No. Laporan / CoA</th>
+<th class="py-3 px-space-md">Sampel / Matriks</th>
+<th class="py-3 px-space-md">Parameter Utama Diuji</th>
+<th class="py-3 px-space-md">Tgl Terbit</th>
+<th class="py-3 px-space-md">Status Pembayaran</th>
+<th class="py-3 px-space-md">Keabsahan TTD</th>
+<th class="py-3 px-space-md text-right rounded-r-lg">Aksi Pengunduhan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="font-numeric-data font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                CoA/PLB/V/2025/1042
+              </div>
+<span class="font-label-sm text-[10px] text-outline">Batch: BTH-2025-AMDK-04</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface block">Air Minum Dalam Kemasan (AMDK)</span>
+<span class="text-on-surface-variant font-label-sm text-[11px]">SNI 3553:2015 Wajib</span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Kadar Arsen (As), Timbal (Pb), Total Coliform, Kesadahan
+            </td>
+<td class="py-3.5 px-space-md font-numeric-data text-on-surface">
+              14 Mei 2025
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Lunas (Inv #9012)
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="material-symbols-outlined text-[15px]">verified</span> BSrE Certified
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary/10 transition-colors" title="Unduh CoA PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary/10 transition-colors" title="Download Raw Data Excel" type="button">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('qr-modal').classList.remove('hidden')" title="Lihat QR Code Dokumen" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="font-numeric-data font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                CoA/PLB/V/2025/1018
+              </div>
+<span class="font-label-sm text-[10px] text-outline">Batch: BTH-FARM-088</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface block">Sirup Herbal Farmasi</span>
+<span class="text-on-surface-variant font-label-sm text-[11px]">BPOM No. 22/2021</span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Cemaran Etilen Glikol (EG), Dietilen Glikol (DEG) &amp; Angka Kapang Khamir
+            </td>
+<td class="py-3.5 px-space-md font-numeric-data text-on-surface">
+              09 Mei 2025
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Lunas (Inv #8944)
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="material-symbols-outlined text-[15px]">verified</span> BSrE Certified
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary/10 transition-colors" title="Unduh CoA PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary/10 transition-colors" title="Download Raw Data Excel" type="button">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('qr-modal').classList.remove('hidden')" title="Lihat QR Code Dokumen" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 (Pending Payment Warning) -->
+<tr class="hover:bg-tertiary-fixed/10 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="font-numeric-data font-bold text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">lock_clock</span>
+                CoA/PLB/V/2025/0994
+              </div>
+<span class="font-label-sm text-[10px] text-error font-semibold">Terkunci • Pembayaran Diperlukan</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface block">Biji Kopi Arabika Specialty</span>
+<span class="text-on-surface-variant font-label-sm text-[11px]">Sertifikasi Ekspor Eropa</span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Kadar Air, Ochratoxin A, Residu Pestisida &amp; Kafein HPLC
+            </td>
+<td class="py-3.5 px-space-md font-numeric-data text-on-surface">
+              04 Mei 2025
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Belum Bayar (Inv #9105)
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">lock</span> Menunggu Settlement
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="inline-flex items-center gap-1 bg-primary text-on-primary px-space-sm py-1 rounded font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors shadow-sm" onclick="document.getElementById('invoice-drawer').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[14px]">payment</span> Bayar Rp 4.250.000
+              </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="font-numeric-data font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                CoA/PLB/IV/2025/0871
+              </div>
+<span class="font-label-sm text-[10px] text-outline">Batch: BTH-ENV-112</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface block">Udara Ambien &amp; Kebisingan</span>
+<span class="text-on-surface-variant font-label-sm text-[11px]">PP No. 22/2021 Lamp. VII</span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              SO2, NO2, CO, TSP (Debu Total), PM2.5, PM10, Leq 24 Jam
+            </td>
+<td class="py-3.5 px-space-md font-numeric-data text-on-surface">
+              28 Apr 2025
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Lunas (Inv #8701)
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="material-symbols-outlined text-[15px]">verified</span> BSrE Certified
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1.5 rounded-lg text-primary hover:bg-primary/10 transition-colors" title="Unduh CoA PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary/10 transition-colors" title="Download Raw Data Excel" type="button">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('qr-modal').classList.remove('hidden')" title="Lihat QR Code Dokumen" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Download -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-md mt-space-md border-t border-surface-container-high font-label-sm text-label-sm">
+<div class="text-on-surface-variant flex items-center gap-2">
+<span>Menampilkan <strong>1 - 4</strong> dari <strong>24</strong> sertifikat pengujian</span>
+<span class="text-outline-variant">•</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">archive</span> Unduh Batch Semua CoA Terpilih (ZIP)
+        </button>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1 rounded bg-surface-container-high text-on-surface-variant hover:bg-surface-container font-semibold disabled:opacity-50" disabled="" type="button">Sebelumnya</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-bold" type="button">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high" type="button">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high" type="button">3</button>
+<button class="px-3 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container font-semibold" type="button">Selanjutnya</button>
+</div>
+</div>
+</div>
+<!-- Bottom Grid: Knowledge Base & Verification Security Overview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1: Chain of Custody Protocol -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Integritas Sertifikasi KAN</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Setiap LHU/CoA yang diterbitkan terhubung dengan sistem enkripsi tanda tangan elektronik Balai Sertifikasi Elektronik (BSrE) Badan Siber dan Sandi Negara (BSSN).
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-high flex items-center justify-between text-label-sm font-label-sm text-primary">
+<span>ISO/IEC 17025:2017 Terverifikasi</span>
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+</div>
+<!-- Card 2: Regulatory Threshold Guidance -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">rule</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pembaruan Regulasi BMR 2025</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Sistem analitik PrecisionLab secara otomatis menyelaraskan hasil uji klien dengan Permenkes No. 2 Tahun 2023 &amp; Permen LHK No. P.68 untuk limbah cair industri.
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-high flex items-center justify-between text-label-sm font-label-sm text-secondary">
+<span>Cek Matriks Regulasi</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</div>
+</div>
+<!-- Card 3: Direct Technical Support -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Konsultasi Lead Chemist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Memerlukan interpretasi deviasi data spektrum atau konsultasi pemenuhan audit ISO lingkungan? Tim analis senior siap membantu diskusi teknis.
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-high">
+<button class="w-full bg-surface-container-high hover:bg-surface-container text-on-surface py-2 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">forum</span> Jadwalkan Konsultasi Teknis
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-over Invoice / Payment Drawer (Hidden by default, toggleable via buttons) -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="invoice-drawer" role="dialog">
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-xs transition-opacity" onclick="document.getElementById('invoice-drawer').classList.add('hidden')"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-md bg-surface-container-lowest shadow-2xl flex flex-col justify-between p-space-lg">
+<div>
+<div class="flex items-center justify-between border-b pb-space-sm border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">receipt_long</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Faktur &amp; Pembayaran</h3>
+</div>
+<button class="p-1 rounded-lg text-outline hover:bg-surface-container-high transition-colors" onclick="document.getElementById('invoice-drawer').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Invoice Details -->
+<div class="mt-space-lg space-y-space-md">
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">No. Faktur Pajak &amp; Tagihan</span>
+<div class="flex items-center justify-between mt-1">
+<strong class="font-numeric-data text-body-lg text-on-surface font-bold">INV/PLB/2025/9105</strong>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Jatuh Tempo: 18 Mei 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Order Ref: ORD-2025-0391 (Pengujian Biji Kopi Ekspor)</p>
+</div>
+<!-- Breakdown -->
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Pengujian HPLC Kafein &amp; Ochratoxin (3 Sampel)</span>
+<span class="font-numeric-data font-medium text-on-surface">Rp 3.500.000</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Ekstraksi Logam Berat Cemaran</span>
+<span class="font-numeric-data font-medium text-on-surface">Rp 750.000</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>PPN 11% (Faktur Pajak Elektronik e-Faktur)</span>
+<span class="font-numeric-data font-medium text-on-surface">Rp 467.500</span>
+</div>
+<div class="border-t border-surface-container-high pt-2 flex justify-between font-bold text-on-surface text-body-lg">
+<span>Total Tagihan Bersih</span>
+<span class="font-numeric-data text-primary text-headline-sm">Rp 4.717.500</span>
+</div>
+</div>
+<!-- Payment Options -->
+<div class="space-y-space-sm pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block font-semibold">Pilih Metode Pembayaran Instan</span>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-variant/40 transition-colors">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="text-primary focus:ring-0 w-4 h-4" name="payment-method" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Virtual Account Mandiri / BCA</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">account_balance</span>
+</label>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-variant/40 transition-colors">
+<div class="flex items-center gap-space-sm">
+<input class="text-primary focus:ring-0 w-4 h-4" name="payment-method" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">QRIS Dinamis (Konfirmasi Otomatis)</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">qr_code_scanner</span>
+</label>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-variant/40 transition-colors">
+<div class="flex items-center gap-space-sm">
+<input class="text-primary focus:ring-0 w-4 h-4" name="payment-method" type="radio"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Corporate Credit Card (Mastercard / Visa)</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">credit_card</span>
+</label>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container-high space-y-space-sm">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">lock</span> Bayar &amp; Buka Kunci CoA Sekarang
+          </button>
+<p class="font-label-sm text-[10px] text-center text-outline">
+            Setelah pembayaran diverifikasi secara real-time, tautan unduh dokumen resmi berstempel BSrE akan langsung aktif.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive QR Public Verification Modal (Hidden by default) -->
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center hidden" id="qr-modal" role="dialog">
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-xs" onclick="document.getElementById('qr-modal').classList.add('hidden')"></div>
+<div class="relative bg-surface-container-lowest rounded-xl max-w-sm w-full mx-space-md p-space-lg shadow-2xl text-center z-10">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[28px]">qr_code_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Verifikasi Keaslian Dokumen</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Pindai QR ini melalui kamera ponsel atau pembaca barcode untuk validasi langsung dari Public Ledger PrecisionLab.
+      </p>
+<div class="my-space-md p-space-md bg-surface-container-low rounded-xl inline-block border border-outline-variant/30">
+<!-- Enlarged Simulated QR Graphic -->
+<svg class="w-44 h-44 text-on-surface mx-auto" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h2v4h-2v-4zm-4-2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h2v2h-2v-2zm2 2h2v2h-2v-2zm-4-4h4v2h-4v-2z"></path>
+</svg>
+</div>
+<div class="text-left bg-surface-container p-space-sm rounded-lg mb-space-md font-numeric-data text-[11px] text-on-surface-variant">
+<div><strong>Dokumen:</strong> CoA/PLB/V/2025/1042</div>
+<div><strong>Stempel Digital:</strong> BSrE-BSSN Valid</div>
+<div class="truncate"><strong>URL Ledger:</strong> verify.precisionlab.co.id/doc/1042</div>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-lg font-label-md text-label-md font-semibold transition-colors" onclick="document.getElementById('qr-modal').classList.add('hidden')" type="button">
+        Tutup Pratinjau
+      </button>
+</div>
+</div>
+</div></main></div></body></html>
