@@ -1,0 +1,53 @@
+export const metrics = [
+  {
+    id: 'baru',
+    label: 'Sampel Baru Hari Ini',
+    value: '28',
+    unit: 'Sampel',
+    icon: 'inventory_2',
+    iconBg: 'bg-surface-container',
+    iconColor: 'text-primary',
+    badge: '+4 Antrean Barcode',
+    valueColor: 'text-on-surface',
+  },
+  {
+    id: 'analisis',
+    label: 'Sedang Dianalisis',
+    value: '64',
+    unit: 'Pengujian',
+    icon: 'science',
+    iconBg: 'bg-primary-fixed',
+    iconColor: 'text-primary',
+    badge: '8 Instrumen Aktif',
+    valueColor: 'text-primary',
+  },
+  {
+    id: 'validasi',
+    label: 'Menunggu Validasi',
+    value: '12',
+    unit: 'Laporan',
+    icon: 'draw',
+    iconBg: 'bg-tertiary-fixed',
+    iconColor: 'text-tertiary',
+    badge: 'Butuh TTD Elektronik',
+    valueColor: 'text-error',
+  },
+  {
+    id: 'tat',
+    label: 'Turnaround Time (TAT)',
+    value: '2.8',
+    unit: 'Hari Kerja',
+    icon: 'timer',
+    iconBg: 'bg-surface-container',
+    iconColor: 'text-on-surface',
+    badge: 'Target SLA: 3.0 Hari',
+    valueColor: 'text-on-surface',
+  },
+]
+
+export const workflowTabs = [
+  { id: 'registrasi', label: 'Registrasi & Penerimaan Sampel', icon: 'how_to_reg', count: '28', active: true },
+  { id: 'worklist', label: 'Worklist Analis (Uji Berjalan)', icon: 'assignment_turned_in', count: '64', active: false },
+  { id: 'verifikasi', label: 'Verifikasi Berjenjang', icon: 'verified_user', count: '12', active: false },
+  { id: 'logbook', label: 'Logbook & Kalibrasi Alat', icon: 'build_circle', dot: true, active: false },
+]
